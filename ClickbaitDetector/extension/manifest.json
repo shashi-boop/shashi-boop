@@ -1,0 +1,38 @@
+{
+    "manifest_version": 2,
+    "name": "Clickbait Detector",
+    "version": "0.0.0.1",
+    "author": "Project Group 13 - ALLIANCE UNIVERSITY",
+    "description": "Calculates probability of an article headline being clickbait.",
+    "offline_enabled": true,
+    "browser_action": {
+      "default_icon": {
+        "16": "icons/clickbait_16.png"
+      },
+      "default_title": "Clickbait Detector",
+      "default_popup": "popup/popup.html"
+    },
+    "icons": {
+      "64": "icons/clickbait_64.png",
+      "32": "icons/clickbait_32.png",
+      "24": "icons/clickbait_24.png",
+      "16": "icons/clickbait_16.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js":["script_files/cb_content.js"]
+      }
+    ],
+    "background": {
+      "scripts": ["script_files/cb_background_extension.js"],
+      "persistent": false
+    },
+      "permissions": [
+      "storage",
+      "activeTab", 
+      "tabs",
+      "http://localhost/*",
+      "contextMenus"
+    ]
+  }

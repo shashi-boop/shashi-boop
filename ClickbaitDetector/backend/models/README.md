@@ -1,0 +1,1 @@
+Must download GloVe 6B 50D text file.
